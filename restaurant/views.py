@@ -1,3 +1,11 @@
+'''
+rendering templates
+'''
 from django.shortcuts import render
 
-# Create your views here.
+
+def home(request):
+    '''
+    render home template
+    '''
+    return render(request, 'home.html')
