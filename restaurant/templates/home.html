@@ -5,8 +5,8 @@
 {% for branch in sor %}
 <h4>{{branch.name}}</h4>
 {% for record in branch.transactions%}
-<p>{{ record.id }} by {{record.Name}} spent {{record.Amount}} at {{record.Branch}} {% if record.highestInBranch %}Top in
-    {{record.Branch}} branch{% endif %}</p>
+<p>{{record.Name}} spent Ksh.{{record.Amount}} on {{record.Timestamp|date:"M d Y"}} <strong>{% if record.highestInBranch %}**Top in
+        {{record.Branch}} branch**{% endif %}</strong></p>
 {% endfor %}
 {% endfor %}
 {% endblock %}

@@ -3,9 +3,10 @@ file to handle api requests
 '''
 import urllib.request
 import json
+import itertools
 from django.conf import settings
 from .models import Records
-import itertools
+
 
 
 API_KEY = settings.API_KEY
@@ -67,8 +68,9 @@ def process_transaction_records_results(transactions_records_results_list):
         Amount = transactions_records_item.get('fields').get('Amount')
         Branch = transactions_records_item.get('fields').get('Branch')
         highestInBranch = transactions_records_item.get('fields').get('isHighest', False)
+        Timestamp = transactions_records_item.get('fields').get('Timestamp')
 
-        transactions_records_object = Records(id, Name, Amount, Branch, highestInBranch)
+        transactions_records_object = Records(id, Name, Amount, Branch, highestInBranch, Timestamp)
         transactions_records_results.append(transactions_records_object)
 
     return transactions_records_results

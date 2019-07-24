@@ -1,4 +1,5 @@
 import itertools
+from dateutil.parser import parse
 '''
 defining the Record object
 '''
@@ -8,12 +9,13 @@ class Records:
     '''
     class to define a record object
     '''
-    def __init__(self, id, Name, Amount, Branch, highestInBranch):
+    def __init__(self, id, Name, Amount, Branch, highestInBranch, Timestamp):
         self.id = id
         self.Name = Name
         self.Amount = Amount
         self.Branch = Branch
         self.highestInBranch = highestInBranch
+        self.Timestamp = parse(Timestamp)
 
     @staticmethod
     def sort_by_branch(records):
