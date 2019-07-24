@@ -7,7 +7,7 @@ defining the Record object
 
 class Records:
     '''
-    class to define a record object
+    class to define a the blueprint of a record object
     '''
     def __init__(self, id, Name, Amount, Branch, highestInBranch, Timestamp):
         self.id = id
@@ -19,8 +19,13 @@ class Records:
 
     @staticmethod
     def sort_by_branch(records):
-
+        '''
+        function to sort transaction records by branch name
+        '''
         def get_branch_name(record):
+            '''
+            function to get branch names
+            '''
             return record.Branch
 
         sorted_list = sorted(records, key=get_branch_name)

@@ -8,7 +8,7 @@ from .request import get_transactions_records
 
 def home(request):
     '''
-    render home template
+    render home template and display transaction records data
     '''
     transactions_records = get_transactions_records()
     # ordering = ('Amount')
@@ -18,4 +18,3 @@ def home(request):
         "sor": sorted_branches
     }
     return render(request, 'home.html', context)
-
