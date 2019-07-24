@@ -67,6 +67,7 @@ WSGI_APPLICATION = 'assignment.wsgi.application'
 
 MODE = config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
+API_KEY = config('API_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 # development
 
