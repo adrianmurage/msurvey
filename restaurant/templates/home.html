@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>hi home</h1>
+
+{% for branch in sor %}
+<h4>{{branch.name}}</h4>
+{% for record in branch.transactions%}
+<p>{{ record.id }} by {{record.Name}} spent {{record.Amount}} at {{record.Branch}} {% if record.highestInBranch %}Top in
+    {{record.Branch}} branch{% endif %}</p>
+{% endfor %}
+{% endfor %}
 {% endblock %}
